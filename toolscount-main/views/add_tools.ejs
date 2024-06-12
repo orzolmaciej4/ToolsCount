@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <title>Add Tools</title>
+</head>
+<body>
+    <header>
+        <%- include('navbarlogged') %>
+      </header>
+      
+    <div class="addtools-form">
+        <h1>Add Tool Form</h1>
+        <form action="/add_tool" method="post">
+            <div class="form-group">
+                <label for="name">Name of tool:</label>
+                <input type="name" name="name" id="name" placeholder="Enter the name of the tool" required>
+            </div>
+            <div class="form-group">
+                <label for="count">Count:</label>
+                <input type="number" name="count" id="count" placeholder="Enter the amount used" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="mechanic">Mechanic:</label>
+                <input type="mechanic" name="mechanic" id="mechanic" placeholder="Enter your username/mechanic id" required>
+            </div>
+            <input type="submit" class="btn-addtool" value="Add tool">
+            <a href="javascript:history.back()" class="btn-canceladdtool">Cancel</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert != "undefined")  { %>
+        <script>
+        Swal.fire({
+          title:'<%= alertTitle %>',
+          text:'<%= alertMessage %>',
+          icon:'<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+        }).then(()=>{
+          window.location='/<%= ruta %>'
+        })
+        </script>
+       <% } %>
+</body>
+</html>

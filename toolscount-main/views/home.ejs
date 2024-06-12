@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ToolCount</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body>
+    <% if (login) { %>
+        <header>
+            <%- include('navbarlogged') %>
+        </header>
+        <div class="row-circuit">
+            <article>
+                <img src="resources/css/Montmelo1.jpg">
+                <img src="resources/css/Montmelo.png">
+            </article>
+            <article>
+                <img src="resources/css/monaco.jpg">
+                <img src="resources/css/Monaco.png">
+            </article>
+            <article>
+                <img src="resources/css/spa.jpg">
+                <img src="resources/css/spa.png">
+            </article>
+            <article>
+                <img src="resources/css/suzuka.jpeg">
+                <img src="resources/css/suzuka.png">
+            </article>
+        </div>
+        <% if (isAdmin) {%>
+            <a class="fa fa-cogs btn-info" href="/toolsadmin"> Tools in database </a>
+            <a class="fa fa-address-card-o btn-info" href="register"> Add a new user </a>
+        <% } else {%>
+            <a class="fa fa-plus-square btn-info" href="/add_tool"> Add a tool</a>
+            <a class="fa fa-cogs btn-info" href="/toolsuser"> Tools in database </a>
+            <h3>If you need to contact an admin or our technical support directly, please send an email through the enquiry form to the following email address toolscount@gmail.com</h3>
+        <% }%>
+    <% } else { %>
+        <header>
+            <%- include('navbar') %>
+        </header>
+        <div class="alert-container">
+            <h1><strong><%= name %></strong></h1>
+        </div>
+        <div class="row-circuit">
+            <article>
+                <img src="resources/css/Montmelo1.jpg">
+                <img src="resources/css/Montmelo.png">
+            </article>
+            <article>
+                <img src="resources/css/monaco.jpg">
+                <img src="resources/css/Monaco.png">
+            </article>
+            <article>
+                <img src="resources/css/spa.jpg">
+                <img src="resources/css/spa.png">
+            </article>
+            <article>
+                <img src="resources/css/suzuka.jpeg">
+                <img src="resources/css/suzuka.png">
+            </article>
+        </div>
+        <h1>About Us</h1>
+        <p>Welcome to toolsCount, your reliable partner in car or motorbikes parts counting for races!</p>
+        <p>At toolsCount, we specialize in providing accurate and efficient counting solutions for motorsports enthusiasts and racing teams. With our state-of-the-art tools and technology, we help you keep track of every part with precision.</p>
+        <p>Whether you're a professional racing team or an individual passionate about motorsports, ToolsCount is here to support you. Our dedicated team of experts is committed to delivering reliable counting services and ensuring your racing experience is hassle-free.</p>
+        <p>Join us in the pursuit of excellence and get ready to revolutionize the way you count car parts for races!</p>
+        <h1>Contact with us: go to Inquiry Form page and send an email to the following address toolscount@gmail.com</h1>
+    <% } %>
+</body>
+
+</html>

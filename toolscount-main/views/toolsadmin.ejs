@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ToolCount</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;  
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <%- include('navbarlogged') %>
+    </header>
+    <h1>Tools Table</h1>
+    <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Counter</th>
+                        <th>Mechanic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% tools.forEach((tool) => { %>
+                        <tr>
+                            <td><%= tool.name %></td>
+                            <td><%= tool.counter %></td>
+                            <td><%= tool.id_mechanic %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+    </div>
+</body>
+
+</html>

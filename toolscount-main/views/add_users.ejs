@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <title>Add Users</title>
+</head>
+<body>
+    <header>
+        <%- include('navbarlogged') %>
+      </header>
+    <div class="register-form">
+        <h1>New user registration form</h1>
+        <form action="/register" method="post">
+            <label for="user">User</label>
+            <input type="text" name="user" required>
+
+            <label for="pass">Password</label>
+            <input type="password" name="pass" required>
+
+            <label for="role">Role</label>
+            <select name="role" id="role" class="select-css">
+                <option value="admin" selected>Admin</option>
+                <option value="mechanic" selected>Mechanic</option>
+            </select>
+
+            <div style="display: inline;">
+                <a href="/" class="btn-cancel">Cancel</a><input type="submit" class="btn-save" value="Save">
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert != "undefined")  { %>
+        <script>
+        Swal.fire({
+          title:'<%= alertTitle %>',
+          text:'<%= alertMessage %>',
+          icon:'<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+        }).then(()=>{
+          window.location='/<%= ruta %>'
+        })
+        </script>
+       <% } %>
+
+</body>
+</html>

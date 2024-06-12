@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>We are here to help you</title>
+        <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+  <header>
+    <%- include('navbar') %>
+  </header>
+      <div class="form-container">
+        <h2>We are here to help you</h2>
+        <form action="/send-query" method="POST">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="question">Question :</label>
+            <textarea name="question" id="question" placeholder="Enter your question" required></textarea>
+          </div>
+          <input type="submit" class="btn-submit" value="Submit">
+        </form>
+      </div>
+    
+      <% if (typeof messageSent != "undefined" && messageSent) { %>
+        <div class="message-Sent">
+          <h3>Message sent successfully</h3>
+          <p>Thank you for contacting us. We will contact you soon.</p>
+        </div>
+      <% } %>
+    
+    </body>
+    </html>
+    
